@@ -4,9 +4,6 @@ using Microsoft.Extensions.Options;
 using NetDevPack.Identity.Jwt;
 using NetDevPack.Identity.Jwt.Model;
 using NetDevPack.Identity.Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -70,11 +67,6 @@ namespace WebAPI.Controllers
 				return BadRequest("Este usuário está bloqueado.");
 
 			return BadRequest("Dados de acesso inválidos.");
-		}
-
-		public void Logout()
-		{
-			_signInManager.SignOutAsync();
 		}
 
 		private UserResponse<string> GetUserResponse(string email)
